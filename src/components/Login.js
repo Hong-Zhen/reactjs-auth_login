@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef();
@@ -10,6 +10,7 @@ const Login = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [errAlert, setErrAlert] = useState("error");
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,11 +18,14 @@ const Login = () => {
     try {
       setError("");
       setLoading(true);
-      setErrAlert("success");
+      setErrAlert("error");
       setError("Logging in...");
       await login(emailRef.current.value, pwd1Ref.current.value);
       console.log(`Logged In successfull
           Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
+      setErrAlert("success");
+      setError("Logged in...");
+      history.push("/");
     } catch {
       setError("Fail to sign in. Try Again Later");
       setErrAlert("error");

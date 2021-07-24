@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Signup = () => {
   const emailRef = useRef();
@@ -11,6 +11,7 @@ const Signup = () => {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [errAlert, setErrAlert] = useState("error");
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -26,11 +27,13 @@ const Signup = () => {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, pwd1Ref.current.value);
       setErrAlert("success");
+      setError("Creating Account...");
+      await signup(emailRef.current.value, pwd1Ref.current.value);
       setError("Account Created!");
-      console.log(`Account creation successfull
+      console.log(`Account creation is successfull
         Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
+      history.push("/login");
     } catch {
       setError("Fail to create an account. Try Again Later");
       setErrAlert("error");
