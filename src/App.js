@@ -1,14 +1,25 @@
 import React from "react";
-import Signup from "./components/Signup";
 import { AuthProvider } from "./contexts/AuthContext";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <AuthProvider>
-      <div className="container">
-        <Signup />
+    <>
+      <div>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+            </Switch>
+          </AuthProvider>
+        </Router>
       </div>
-    </AuthProvider>
+    </>
   );
 }
 

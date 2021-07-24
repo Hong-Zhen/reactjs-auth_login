@@ -3,11 +3,10 @@ import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Login = () => {
   const emailRef = useRef();
   const pwd1Ref = useRef();
-  const pwd2Ref = useRef();
-  const { signup } = useAuth();
+  const { login } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [errAlert, setErrAlert] = useState("error");
@@ -15,29 +14,21 @@ const Signup = () => {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (pwd1Ref.current.value !== pwd2Ref.current.value) {
-      console.log(
-        `Both password doesn't match
-          PW1: ${pwd1Ref.current.value} PW2: ${pwd2Ref.current.value}`
-      );
-      return setError("Both password doesn't match");
-    }
-
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, pwd1Ref.current.value);
       setErrAlert("success");
-      setError("Account Created!");
-      console.log(`Account creation successfull
-        Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
+      setError("Logging in...");
+      await login(emailRef.current.value, pwd1Ref.current.value);
+      console.log(`Logged In successfull
+          Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
     } catch {
-      setError("Fail to create an account. Try Again Later");
+      setError("Fail to sign in. Try Again Later");
       setErrAlert("error");
-      console.log("Create account failed");
+      console.log("Sign in failed");
       console.log(
         `Email: ${emailRef.current.value}
-        PW1: ${pwd1Ref.current.value} PW2: ${pwd2Ref.current.value}`
+          PW: ${pwd1Ref.current.value}`
       );
     }
     setLoading(false);
@@ -49,9 +40,9 @@ const Signup = () => {
 
   return (
     <>
-      <form className="container" onSubmit={handleSubmit}>
+      <form className="signin-form container" onSubmit={handleSubmit}>
         {error && <Alert severity={errAlert}>{error}</Alert>}
-        <h1 className="header-form">Sign Up</h1>
+        <h1 className="header-form">Log In</h1>
         <label>Email Address:</label>
         <input
           ref={emailRef}
@@ -67,21 +58,20 @@ const Signup = () => {
           type="password"
           id="pwd1"
           name="pwd1"
-          placeholder="minimum of 6 characters"
+          //   placeholder="minimum of 6 characters"
           minLength="6"
           required
         />
-        <label>Confirmation Password:</label>
-        <input ref={pwd2Ref} type="password" id="pwd2" name="pwd2" required />
+
         <button disabled={loading} className="btn">
-          Sign Up!
+          Log In!
         </button>
       </form>
       <div className="form-footer">
-        Already have an account? <Link to="/login">Log In here</Link>
+        Need an account? <Link to="/signup">Sign Up here</Link>
       </div>
     </>
   );
 };
 
-export default Signup;
+export default Login;
