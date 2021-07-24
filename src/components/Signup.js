@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import MuiAlert from "@material-ui/lab/Alert";
 
 const Signup = () => {
   const emailRef = useRef();
@@ -38,10 +39,14 @@ const Signup = () => {
     setLoading(false);
   }
 
+  function Alert(props) {
+    return <MuiAlert variant="filled" {...props} />;
+  }
+
   return (
     <form className="signup-form" onSubmit={handleSubmit}>
-      {error && <h3>{error}</h3>}
-      <h1 style={{}}>Header Tag Text</h1>
+      {error && <Alert severity="error">{error}</Alert>}
+      <h1 className="header-signup">Sign Up</h1>
       <label>Email Address:</label>
       <input
         ref={emailRef}

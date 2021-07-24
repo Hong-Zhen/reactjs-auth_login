@@ -37,6 +37,11 @@ body {
   height: 28px;
 }
 
+.header-signup {
+  text-align: center;
+  padding-bottom: 7px;
+}
+
 /* input:focus {
   outline: black;
 } */
