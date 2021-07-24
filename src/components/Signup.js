@@ -9,6 +9,7 @@ const Signup = () => {
   const { signup } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
+  const [errAlert, setErrAlert] = useState("error");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,11 +26,13 @@ const Signup = () => {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, pwd1Ref.current.value);
+      setErrAlert("success");
       setError("Account Created!");
       console.log(`Account creation successfull
         Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
     } catch {
-      setError("Fail to create an account");
+      setError("Fail to create an account. Try Again Later");
+      setErrAlert("error");
       console.log("Create account failed");
       console.log(
         `Email: ${emailRef.current.value}
@@ -45,7 +48,7 @@ const Signup = () => {
 
   return (
     <form className="signup-form" onSubmit={handleSubmit}>
-      {error && <Alert severity="error">{error}</Alert>}
+      {error && <Alert severity={errAlert}>{error}</Alert>}
       <h1 className="header-signup">Sign Up</h1>
       <label>Email Address:</label>
       <input

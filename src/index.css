@@ -16,7 +16,7 @@ body {
   overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
-  padding: 30px 30px 10px 30px;
+  padding: 10px 25px 10px 25px;
   border-radius: 5px;
 }
 
@@ -64,10 +64,9 @@ body {
 }
 
 .signup-btn {
-  margin-top: 10px;
+  margin: 10px 0 10px 0;
 }
 
 .form-footer {
-  padding-top: 10px;
   text-align: center;
 }
