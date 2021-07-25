@@ -18,14 +18,14 @@ const Login = () => {
     try {
       setError("");
       setLoading(true);
-      setErrAlert("error");
+      setErrAlert("success");
       setError("Logging in...");
       await login(emailRef.current.value, pwd1Ref.current.value);
-      console.log(`Logged In successfull
+      console.log(`Logged In successfully!
           Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
       setErrAlert("success");
-      setError("Logged in...");
-      history.push("/");
+      setError("Logged in! Redirecting...");
+      history.push("/dashboard");
     } catch {
       setError("Fail to sign in. Try Again Later");
       setErrAlert("error");
