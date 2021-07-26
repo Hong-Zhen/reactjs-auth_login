@@ -44,6 +44,18 @@ const Login = () => {
 
   return (
     <>
+      <div className="nav-container">
+        <Link to="/" exact>
+          <button className="back-btn" title="Back to Homepage">
+            Back Home
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="fwd-btn" title="Sign Up">
+            Sign Up
+          </button>
+        </Link>
+      </div>
       <form className="signin-form container" onSubmit={handleSubmit}>
         {error && <Alert severity={errAlert}>{error}</Alert>}
         <h1 className="header-form">Log In</h1>
@@ -72,7 +84,10 @@ const Login = () => {
         </button>
       </form>
       <div className="form-footer">
-        Need an account? <Link to="/signup">Sign Up here</Link>
+        Need an account?{" "}
+        <Link to="/signup" title="Sign Up Now">
+          Sign Up here
+        </Link>
       </div>
     </>
   );

@@ -2,10 +2,81 @@
   background-color: lightblue;
   color: white;
   width: 100%;
+  height: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px 0 30px;
 }
 
-.nav-menu {
-  color: lightskyblue;
+/* Logo Image */
+.nav-img {
+  width: 50px;
+  height: auto;
+  border: 1.2px solid steelblue;
+  border-radius: 50px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-img:hover {
+  border: 3px solid steelblue;
+  transform: scale(1.2);
+}
+
+/* Links & Link */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  /* border: 3px solid seagreen; */
+}
+
+.nav-link {
+  border-radius: 50px;
+  color: black;
+  letter-spacing: 1px;
+  padding: 1px 10px;
+  margin: 0px 10px;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: lightskyblue;
+  border-radius: 10px;
+}
+
+/* Button */
+.fwd-btn {
+  font-size: 15px;
+  background-color: lightblue;
+  width: 85px;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  border: 1.7px solid steelblue;
+  position: relative;
+  display: inline-block;
+  color: white;
+  box-shadow: 0 6px 10px -6px black;
+  transition: all 0.5s;
+  padding-left: 12px;
+}
+
+.fwd-btn:after {
+  content: " »";
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fwd-btn:hover {
+  padding-right: 10px;
+  padding-left: 4px;
+  cursor: pointer;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.fwd-btn:hover:after {
+  opacity: 1;
+  right: 10px;
 }

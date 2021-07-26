@@ -64,3 +64,45 @@ form input {
 .form-footer {
   text-align: center;
 }
+
+.back-btn {
+  font-size: 15px;
+  background-color: lightblue;
+  width: 110px;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  border: 1.7px solid steelblue;
+  color: white;
+  box-shadow: 0 6px 10px -6px black;
+  transition: all 0.5s;
+  padding-right: 12px;
+  padding-top: 2px;
+  text-align: center;
+}
+
+.back-btn:after {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.back-btn:hover {
+  padding-right: 4px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: black;
+  background-color: whitesmoke;
+}
+
+.back-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.back-btn:hover span {
+  display: none;
+}
+
+.back-btn:hover:before {
+  content: "« ";
+}

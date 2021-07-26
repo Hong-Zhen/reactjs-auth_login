@@ -10,25 +10,42 @@ const Navbar = () => {
   return (
     <nav className="nav-container">
       <Link to="/" exact>
-        Logo Image
+        <img src="/logo192.png" className="nav-img" alt="Logo" />
       </Link>
-      <div className="nav-menu">
-        <li>
-          <Link to="/" exact onClick={() => setCurrNav("Home")}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/" exact onClick={() => setCurrNav("About Me")}>
-            About me
-          </Link>
-        </li>
-        <li>
-          <Link to="/" exact onClick={() => setCurrNav("Reviews")}>
-            Reviews
-          </Link>
-        </li>
+      <div className="nav-links">
+        <Link
+          to="/"
+          exact
+          className="nav-link"
+          style={{ textDecoration: "none" }}
+          onClick={() => setCurrNav("Home")}
+        >
+          Home
+        </Link>
+        <Link
+          to="/"
+          exact
+          className="nav-link"
+          style={{ textDecoration: "none" }}
+          onClick={() => setCurrNav("About Me")}
+        >
+          About
+        </Link>
+        <Link
+          to="/"
+          exact
+          className="nav-link"
+          style={{ textDecoration: "none" }}
+          onClick={() => setCurrNav("Reviews")}
+        >
+          Reviews
+        </Link>
       </div>
+      <Link to="/login">
+        <button className="fwd-btn" title="Login">
+          Login
+        </button>
+      </Link>
     </nav>
   );
 };
