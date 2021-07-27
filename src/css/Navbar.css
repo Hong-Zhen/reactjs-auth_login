@@ -1,8 +1,10 @@
+/* Desktop Version */
+
 .nav-container {
   background-color: lightblue;
   color: white;
   width: 100%;
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +13,7 @@
 
 /* Logo Image */
 .nav-img {
-  width: 50px;
+  width: 65px;
   height: auto;
   border: 1.2px solid steelblue;
   border-radius: 50px;
@@ -24,32 +26,47 @@
 }
 
 /* Links & Link */
-.nav-links {
-  list-style-type: none;
+.nav-menu {
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  /* border: 3px solid seagreen; */
+  text-align: center;
+  width: 70vw;
+  justify-content: flex-end;
+}
+
+.nav-item {
+  height: 80px;
 }
 
 .nav-link {
   border-radius: 50px;
   color: black;
   letter-spacing: 1px;
-  padding: 1px 10px;
+  padding: 0px 10px;
   margin: 0px 10px;
+  text-decoration: none;
+  transition: 200ms;
+  font-size: 18px;
 }
 
 .nav-link:hover {
   color: white;
   background-color: lightskyblue;
+  padding: 5px 12px;
   border-radius: 10px;
+  font-size: 22px;
+}
+
+.nav-icon,
+.nav-link-mobile {
+  display: none;
 }
 
 /* Button */
 .fwd-btn {
-  font-size: 15px;
+  font-size: 18px;
   background-color: lightblue;
-  width: 85px;
+  width: 97px;
   height: 35px;
   border-radius: 10px;
   outline: none;
@@ -79,4 +96,83 @@
 .fwd-btn:hover:after {
   opacity: 1;
   right: 10px;
+}
+
+/* Mobile Version */
+
+@media screen and (max-width: 950px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 170px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu-mobile {
+    background-color: lightcyan;
+    color: white;
+    left: 0;
+    transition: all 0.5s ease;
+  }
+
+  .nav-link,
+  .nav-link-mobile {
+    text-align: center;
+    width: 100%;
+    display: table;
+    margin: 8px;
+  }
+
+  .nav-link:hover,
+  .nav-link-mobile:hover {
+    background-color: black;
+    color: yellow;
+    border-radius: 10px;
+  }
+
+  .nav-link-mobile {
+    display: inline-block;
+    text-align: center;
+    color: black;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 200ms;
+    font-size: 18px;
+    border: 2px solid black;
+    width: 65%;
+    transition: all 0.3s ease-in-out;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .nav-link-mobile:hover {
+    font-size: 22px;
+  }
+
+  /* .nav-logo {
+    position: absolute;
+    transform: translate(-100%, 60%);
+  } */
+
+  .nav-icon {
+    position: relative;
+    display: inline;
+    font-size: 1.9em;
+    cursor: pointer;
+    transition: transform 0.3 ease-in-out;
+  }
+
+  .nav-icon:hover {
+    transform: scale(1.2);
+  }
+
+  .cross-icon {
+    color: tomato;
+  }
 }

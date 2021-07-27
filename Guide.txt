@@ -1,0 +1,3 @@
+Get font awesome:
+npm i react-icons
+import {} from 'react-icons/fa'
