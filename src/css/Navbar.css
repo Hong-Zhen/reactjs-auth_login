@@ -90,7 +90,7 @@
   padding-left: 4px;
   cursor: pointer;
   color: black;
-  background-color: whitesmoke;
+  background-color: linen;
 }
 
 .fwd-btn:hover:after {
@@ -109,7 +109,7 @@
     height: 170px;
     position: absolute;
     top: 80px;
-    left: -100%;
+    left: -120%;
     opacity: 1;
     transition: all 0.5s ease;
   }
@@ -121,44 +121,31 @@
     transition: all 0.5s ease;
   }
 
-  .nav-link,
-  .nav-link-mobile {
-    text-align: center;
-    width: 100%;
-    display: table;
-    margin: 8px;
-  }
-
-  .nav-link:hover,
-  .nav-link-mobile:hover {
-    background-color: black;
-    color: yellow;
-    border-radius: 10px;
-  }
-
   .nav-link-mobile {
     display: inline-block;
     text-align: center;
     color: black;
     letter-spacing: 1px;
     text-decoration: none;
+    width: 60%;
+    margin: 5px;
     transition: 200ms;
     font-size: 18px;
-    border: 2px solid black;
-    width: 65%;
     transition: all 0.3s ease-in-out;
     align-items: center;
     border-radius: 10px;
   }
 
   .nav-link-mobile:hover {
+    background-color: lightskyblue;
+    color: white;
     font-size: 22px;
+    width: 85%;
   }
 
-  /* .nav-logo {
-    position: absolute;
-    transform: translate(-100%, 60%);
-  } */
+  .nav-btn-mobile:hover {
+    width: 50%;
+  }
 
   .nav-icon {
     position: relative;

@@ -34,17 +34,32 @@ const Navbar = () => {
 
       <ul className={click ? "nav-menu nav-menu-mobile" : "nav-menu"}>
         <li className="nav-items">
-          <Link to="/" exact className="nav-link" onClick={closeMobileMenu}>
+          <Link
+            to="/"
+            exact
+            className={click ? "nav-link-mobile" : "nav-link"}
+            onClick={closeMobileMenu}
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/" exact className="nav-link" onClick={closeMobileMenu}>
+          <Link
+            to="/"
+            exact
+            className={click ? "nav-link-mobile" : "nav-link"}
+            onClick={closeMobileMenu}
+          >
             About
           </Link>
         </li>
         <li>
-          <Link to="/" exact className="nav-link" onClick={closeMobileMenu}>
+          <Link
+            to="/"
+            exact
+            className={click ? "nav-link-mobile" : "nav-link"}
+            onClick={closeMobileMenu}
+          >
             Reviews
           </Link>
         </li>
@@ -53,8 +68,9 @@ const Navbar = () => {
           <Link
             to="/signup"
             exact
-            className="nav-link-mobile"
+            className="nav-link-mobile nav-btn-mobile"
             onClick={closeMobileMenu}
+            style={{ border: "2px solid black" }}
           >
             Login
           </Link>
