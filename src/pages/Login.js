@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link, useHistory } from "react-router-dom";
+import "../css/Login.css";
 
 const Login = () => {
   const emailRef = useRef();
@@ -50,13 +51,14 @@ const Login = () => {
             Back Home
           </button>
         </Link>
+        <h1>Login Page</h1>
         <Link to="/signup">
           <button className="fwd-btn" title="Sign Up">
             Sign Up
           </button>
         </Link>
       </div>
-      <form className="signin-form container" onSubmit={handleSubmit}>
+      <form className="login-container" onSubmit={handleSubmit}>
         {error && <Alert severity={errAlert}>{error}</Alert>}
         <h1 className="header-form">Log In</h1>
         <label>Email Address:</label>

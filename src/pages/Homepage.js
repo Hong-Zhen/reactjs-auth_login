@@ -1,13 +1,15 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Footer from "../components/Footer";
+import HeroSection from "../components/HeroSection";
+import Navbar from "../components/Navbar";
 import "../css/Homepage.css";
 
 const Homepage = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
-      <div>Hero container</div>
-      <footer>Footer container</footer>
+      <HeroSection />
+      <Footer />
     </div>
   );
 };

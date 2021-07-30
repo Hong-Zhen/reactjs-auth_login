@@ -4,6 +4,17 @@ npm i firebase
 Install bootstrap & react-bootstrap:
 npm i bootstrap react-bootstrap
 
-Install route-dom
+Install route-dom:
 npm i react-router-dom
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+
+Install react font awesome icons:
+npm i react-icons
+Once installed, 'react-icons' will be in package.json
+
+Import font awesome icons:
+https://react-icons.github.io/react-icons/icons?name=fa
+import { IconName } from "react-icons/fa";
+
+For reference:
+https://github.com/briancodex/react-website-v1/tree/master/src

@@ -1,10 +1,10 @@
 import React from "react";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Homepage from "./components/Homepage";
-import Dashboard from "./components/Dashboard";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
+import Homepage from "./pages/Homepage";
+import Dashboard from "./pages/Dashboard";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 
 function App() {
   return (

@@ -1,0 +1,142 @@
+.signup-container {
+  max-width: 400px;
+  margin: 80px auto 10px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 10px 25px 10px 25px;
+  border-radius: 5px;
+}
+
+.nav-container {
+  background-color: lightblue;
+  color: white;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px 0 30px;
+}
+
+.fwd-btn {
+  font-size: 18px;
+  background-color: lightblue;
+  width: 97px;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  border: 1.7px solid steelblue;
+  position: relative;
+  display: inline-block;
+  color: white;
+  box-shadow: 0 6px 10px -6px black;
+  transition: all 0.5s;
+  padding-left: 12px;
+}
+
+.fwd-btn:after {
+  content: " »";
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fwd-btn:hover {
+  padding-right: 10px;
+  padding-left: 4px;
+  cursor: pointer;
+  color: black;
+  background-color: linen;
+}
+
+.fwd-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.back-btn {
+  font-size: 18px;
+  background-color: lightblue;
+  width: 126px;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  border: 1.7px solid steelblue;
+  color: white;
+  box-shadow: 0 6px 10px -6px black;
+  transition: all 0.5s;
+  padding-right: 12px;
+  padding-top: 2px;
+  text-align: center;
+}
+
+.back-btn:after {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.back-btn:hover {
+  padding-right: 4px;
+  padding-left: 10px;
+  cursor: pointer;
+  color: black;
+  background-color: linen;
+}
+
+.back-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.back-btn:hover span {
+  display: none;
+}
+
+.back-btn:hover:before {
+  content: "« ";
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  justify-content: space-around;
+}
+
+form label {
+  padding-bottom: 8px;
+}
+
+form input {
+  margin-bottom: 8px;
+  height: 28px;
+}
+
+.header-form {
+  text-align: center;
+  padding-bottom: 7px;
+}
+
+.btn {
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid lightblue;
+  padding: 5px;
+  background-color: lightblue;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.form-footer {
+  text-align: center;
+}

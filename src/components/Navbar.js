@@ -45,22 +45,22 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/"
+            to="/services"
+            exact
+            className={click ? "nav-link-mobile" : "nav-link"}
+            onClick={closeMobileMenu}
+          >
+            Services
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/about"
             exact
             className={click ? "nav-link-mobile" : "nav-link"}
             onClick={closeMobileMenu}
           >
             About
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/"
-            exact
-            className={click ? "nav-link-mobile" : "nav-link"}
-            onClick={closeMobileMenu}
-          >
-            Reviews
           </Link>
         </li>
 
