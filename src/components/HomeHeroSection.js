@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/HeroSection.css";
+import "../css/HomeHeroSection.css";
 import { Link } from "react-router-dom";
 import { FaArrowCircleRight } from "react-icons/fa";
 

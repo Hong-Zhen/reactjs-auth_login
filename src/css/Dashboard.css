@@ -1,0 +1,15 @@
+.dash-container {
+  max-width: 400px;
+  margin: 80px auto 10px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 10px 25px 10px 25px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-footer {
+  text-align: center;
+}
