@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "../css/Dashboard.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const Dashboard = () => {
-  // const [error, setError] = useState();
-  const { currentUser } = useAuth();
+  const [error, setError] = useState();
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
 
   const userEmail = currentUser.email;
+
   let userName = "";
   for (var i = 0; i < userEmail.length; i++) {
     if (userEmail[i] !== "@") {
@@ -17,8 +19,16 @@ const Dashboard = () => {
     }
   }
 
-  function handleLogout() {
-    console.log("logout");
+  async function handleLogout() {
+    setError("");
+
+    try {
+      await logout();
+      console.log("logout");
+      history.push("/homepage");
+    } catch {
+      setError("Fail to logout");
+    }
   }
 
   return (

@@ -46,7 +46,7 @@ const Login = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/" exact>
+        <Link to="/homepage" exact>
           <button className="back-btn" title="Back to Homepage">
             Back Home
           </button>
@@ -84,6 +84,9 @@ const Login = () => {
         <button disabled={loading} className="btn">
           Log In!
         </button>
+        <div className="" style={{ textAlign: "center" }}>
+          <Link>Forget Password?</Link>
+        </div>
       </form>
       <div className="form-footer">
         Need an account?{" "}

@@ -54,7 +54,7 @@ const Signup = () => {
   return (
     <>
       <div className="nav-container">
-        <Link to="/" exact>
+        <Link to="/homepage" exact>
           <button className="back-btn" title="Back to Homepage">
             Back Home
           </button>

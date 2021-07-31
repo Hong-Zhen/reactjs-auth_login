@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route path="/" exact component={Homepage} />
+              <Route path="/homepage" exact component={Homepage} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
-              <Route path="/dashboard" exact component={Dashboard} />
+              <PrivateRoute path="/dashboard" exact component={Dashboard} />
             </Switch>
           </AuthProvider>
         </Router>
