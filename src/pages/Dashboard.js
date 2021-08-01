@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Dashboard.css";
+import swal from "sweetalert";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -25,6 +26,11 @@ const Dashboard = () => {
     try {
       await logout();
       console.log("logout");
+      swal({
+        title: "Logged Out Successfully!",
+        text: "Bye '" + userName + "'",
+        icon: "success",
+      });
       history.push("/homepage");
     } catch {
       setError("Fail to logout");
