@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Link, useHistory } from "react-router-dom";
+import swal from "sweetalert";
 import "../css/Signup.css";
 
 const Signup = () => {
@@ -22,6 +23,11 @@ const Signup = () => {
         `Both password doesn't match
           PW1: ${pwd1Ref.current.value} PW2: ${pwd2Ref.current.value}`
       );
+      swal({
+        title: "Both password doesn't match",
+        text: "Try Again",
+        icon: "error",
+      });
       return setError("Both password doesn't match");
     }
 
@@ -32,15 +38,25 @@ const Signup = () => {
       setError("Creating Account...");
       await signup(emailRef.current.value, pwd1Ref.current.value);
       setError("Account Created!");
+      swal({
+        title: "Congratulation!",
+        text: "Account Created Successfully",
+        icon: "success",
+        button: "To Login!",
+      });
       console.log(`Account creation is successfull
         Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
       history.push("/login");
     } catch {
       setError("Fail to create an account. Try Again Later");
       setErrAlert("error");
-      console.log("Create account failed");
+      swal({
+        title: "Fail to create an account",
+        text: "Try Again Later",
+        icon: "error",
+      });
       console.log(
-        `Email: ${emailRef.current.value}
+        `Create account failed Email: ${emailRef.current.value}
         PW1: ${pwd1Ref.current.value} PW2: ${pwd2Ref.current.value}`
       );
     }

@@ -16,5 +16,8 @@ Import font awesome icons:
 https://react-icons.github.io/react-icons/icons?name=fa
 import { IconName } from "react-icons/fa";
 
+Temporary email for testing purpose
+https://temp-mail.org/en/
+
 For reference:
 https://github.com/briancodex/react-website-v1/tree/master/src

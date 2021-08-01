@@ -1,18 +1,16 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import swal from "sweetalert";
-import "../css/Login.css";
+import "../css/Resetpw.css";
 
-const Login = () => {
+const ResetPw = () => {
   const emailRef = useRef();
-  const pwd1Ref = useRef();
-  const { login } = useAuth();
+  const { resetpw } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [errAlert, setErrAlert] = useState("error");
-  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,26 +19,27 @@ const Login = () => {
       setError("");
       setLoading(true);
       setErrAlert("success");
-      setError("Logging in...");
-      await login(emailRef.current.value, pwd1Ref.current.value);
-      console.log(`Logged In successfully!
-          Email: ${emailRef.current.value} PW: ${pwd1Ref.current.value}`);
+      setError("Resetting...");
+      await resetpw(emailRef.current.value);
       setErrAlert("success");
-      setError("Logged in! Redirecting...");
-      history.push("/dashboard");
+      setError("Check your inbox for instructions");
+      swal({
+        title: "Password Reset!",
+        text: "Check your inbox for instructions",
+        icon: "success",
+      });
+      console.log(`Reset successfully!
+          Email: ${emailRef.current.value}`);
     } catch {
-      setError("Fail to sign in. Try Again Later");
+      setError("Fail to reset password. Try Again Later");
       setErrAlert("error");
       swal({
-        title: "Fail to Sign In",
+        title: "Fail to Reset Password",
         text: "Try Again Later",
         icon: "error",
       });
-      console.log("Sign in failed");
-      console.log(
-        `Email: ${emailRef.current.value}
-          PW: ${pwd1Ref.current.value}`
-      );
+      console.log("Reset PW failed");
+      console.log(`Email: ${emailRef.current.value}`);
     }
     setLoading(false);
   }
@@ -57,16 +56,11 @@ const Login = () => {
             Back Home
           </button>
         </Link>
-        <h1>Login Page</h1>
-        <Link to="/signup">
-          <button className="fwd-btn" title="Sign Up">
-            Sign Up
-          </button>
-        </Link>
+        <h1>Reset Password Page</h1>
       </div>
-      <form className="login-container" onSubmit={handleSubmit}>
+      <form className="resetpw-container" onSubmit={handleSubmit}>
         {error && <Alert severity={errAlert}>{error}</Alert>}
-        <h1 className="header-form">Log In</h1>
+        <h1 className="header-form">Reset Password</h1>
         <label>Email Address:</label>
         <input
           ref={emailRef}
@@ -76,22 +70,12 @@ const Login = () => {
           placeholder="example@email.com"
           required
         />
-        <label>Password:</label>
-        <input
-          ref={pwd1Ref}
-          type="password"
-          id="pwd1"
-          name="pwd1"
-          //   placeholder="minimum of 6 characters"
-          minLength="6"
-          required
-        />
 
         <button disabled={loading} className="btn">
-          Log In!
+          Reset
         </button>
         <div className="" style={{ textAlign: "center" }}>
-          <Link to="/reset-pw">Forget Password?</Link>
+          <Link to="/login">Login Here</Link>
         </div>
       </form>
       <div className="form-footer">
@@ -104,4 +88,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ResetPw;
