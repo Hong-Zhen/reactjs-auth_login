@@ -41,10 +41,10 @@ const Dashboard = () => {
     <>
       <div className="dash-container">
         <strong>Welcome! </strong> "{userName}"
-        <Link to="/profile">Profile</Link>
+        <Link to="/change-pw">Change Password</Link>
       </div>
       <div className="dash-footer">
-        <Link exact="true">
+        <Link to="" exact="true">
           <button onClick={handleLogout}>Log out</button>
         </Link>
       </div>

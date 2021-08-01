@@ -7,7 +7,7 @@ import "../css/Resetpw.css";
 
 const ResetPw = () => {
   const emailRef = useRef();
-  const { resetpw } = useAuth();
+  const { resetPw } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [errAlert, setErrAlert] = useState("error");
@@ -20,7 +20,7 @@ const ResetPw = () => {
       setLoading(true);
       setErrAlert("success");
       setError("Resetting...");
-      await resetpw(emailRef.current.value);
+      await resetPw(emailRef.current.value);
       setErrAlert("success");
       setError("Check your inbox for instructions");
       swal({

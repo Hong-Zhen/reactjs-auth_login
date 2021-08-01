@@ -20,7 +20,7 @@ const Signup = () => {
 
     if (pwd1Ref.current.value !== pwd2Ref.current.value) {
       console.log(
-        `Both password doesn't match
+        `Both password do not match
           PW1: ${pwd1Ref.current.value} PW2: ${pwd2Ref.current.value}`
       );
       swal({
@@ -28,7 +28,7 @@ const Signup = () => {
         text: "Try Again",
         icon: "error",
       });
-      return setError("Both password doesn't match");
+      return setError("Both password do not match");
     }
 
     try {

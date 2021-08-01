@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import ResetPw from "./pages/ResetPw";
+import Changepw from "./pages/Changepw";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/reset-pw" component={ResetPw} />
               <PrivateRoute path="/dashboard" exact component={Dashboard} />
+              <PrivateRoute path="/change-pw" exact component={Changepw} />
             </Switch>
           </AuthProvider>
         </Router>
