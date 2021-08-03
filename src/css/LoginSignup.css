@@ -1,0 +1,195 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.body {
+  background: #03a9f4;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+.body-active {
+  background: #f43648;
+  /* transition: 0.5s ease-in-out; */
+}
+.container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+
+.blueBg {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0.5px 45px rgba(0, 0, 0, 0, 0.25);
+}
+.blueBg .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blueBg .box h2 {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.blueBg .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.formbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: white;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 45px rgba(0, 0, 0, 0, 0.55);
+  transition: 0.5s ease-in-out;
+}
+
+.formbox-active {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 45px rgba(0, 0, 0, 0, 0.55);
+  transition: 0.5s ease-in-out;
+  background-color: white;
+  overflow: hidden;
+}
+
+.form {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 50px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.form input {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  border: 1px solid black;
+}
+
+.form button {
+  background: #03a9f4;
+  border: none;
+  color: white;
+  max-width: 100px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.form p {
+  color: #333;
+}
+
+.formbox-active .signinform {
+  left: -100%;
+  transition-delay: 0ms;
+}
+
+.formbox .signinform {
+  left: 0;
+  transition-delay: 0.25ms;
+}
+
+.formbox .signupform {
+  left: 100%;
+  transition-delay: 0ms;
+}
+
+.formbox-active .signinform {
+  left: 0;
+  transition-delay: 0.25ms;
+}
+
+.signupform button {
+  background: #f43648;
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    max-width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .blueBg {
+    top: 0;
+    height: 100%;
+  }
+  .formbox {
+    width: 100%;
+    height: 400px;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .blueBg .box {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+  }
+  .signup {
+    bottom: -18px;
+  }
+  .signin {
+    top: -25px;
+  }
+
+  .formbox-active {
+    width: 100%;
+    height: 400px;
+    left: 0;
+    top: 100px;
+  }
+}
