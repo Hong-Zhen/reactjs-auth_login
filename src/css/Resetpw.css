@@ -72,7 +72,7 @@ form {
 }
 
 form label {
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
 }
 
 form input {
@@ -85,8 +85,9 @@ form input {
   padding-bottom: 7px;
 }
 
-.btn {
+.resetpw-container .btn {
   border-radius: 10px;
+  width: 70%;
   outline: none;
   border: 1px solid lightblue;
   padding: 5px;
@@ -94,6 +95,7 @@ form input {
   text-decoration: none;
   cursor: pointer;
   margin: 10px 0 10px 0;
+  align-self: center;
 }
 
 .btn:focus {

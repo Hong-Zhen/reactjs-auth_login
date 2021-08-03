@@ -75,12 +75,12 @@ const ResetPw = () => {
           Reset
         </button>
         <div className="" style={{ textAlign: "center" }}>
-          <Link to="/login">Login Here</Link>
+          <Link to="/login-signup">Login Here</Link>
         </div>
       </form>
       <div className="form-footer">
         Need an account?{" "}
-        <Link to="/signup" title="Sign Up Now">
+        <Link to="/login-signup" title="Sign Up Now">
           Sign Up here
         </Link>
       </div>

@@ -90,7 +90,7 @@ const Login = () => {
         <button disabled={loading} className="btn">
           Log In!
         </button>
-        <div className="" style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center" }}>
           <Link to="/reset-pw">Forget Password?</Link>
         </div>
       </form>
