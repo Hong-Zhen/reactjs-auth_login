@@ -1,12 +1,25 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import MuiAlert from "@material-ui/lab/Alert";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import swal from "sweetalert";
 import "../css/LoginSignup.css";
 
 const LoginSignup = () => {
+  const [showLogin, setShowLogin] = useState(true);
   const [showSignup, setShowSignup] = useState(false);
+  const location = useLocation();
+  const fromLogin = location.state.fromLogin;
+
+  useEffect(() => {
+    if (fromLogin === true) {
+      setShowLogin(true);
+      setShowSignup(false);
+    } else {
+      setShowLogin(false);
+      setShowSignup(true);
+    }
+  }, []);
 
   //   Login
   const loginEmailRef = useRef();
@@ -24,9 +37,15 @@ const LoginSignup = () => {
   const [errAlert, setErrAlert] = useState("error");
   const history = useHistory();
 
-  const handleclicktoggle = () => {
-    setShowSignup(!showSignup);
-    console.log("click btn");
+  const handleRegisterBtn = () => {
+    setShowLogin(false);
+    setShowSignup(true);
+    console.log("click register btn");
+  };
+  const handleLoginBtn = () => {
+    setShowLogin(true);
+    setShowSignup(false);
+    console.log("click login btn");
   };
 
   async function handleLogin(e) {
@@ -118,16 +137,16 @@ const LoginSignup = () => {
         <div className="blueBg">
           <div className="signin box">
             <h2>Already Have an Account?</h2>
-            <button onClick={handleclicktoggle}>Log In</button>
+            <button onClick={handleLoginBtn}>Log In</button>
           </div>
           <div className="signup box">
             <h2>Don't Have an Account?</h2>
-            <button onClick={handleclicktoggle}>Register Now</button>
+            <button onClick={handleRegisterBtn}>Register Now</button>
           </div>
         </div>
 
         <div className={showSignup ? "formbox-active" : "formbox"}>
-          {!showSignup && (
+          {showLogin ? (
             <div className="form signinform">
               <form>
                 {error === "false" && (
@@ -159,9 +178,10 @@ const LoginSignup = () => {
                 </div>
               </form>
             </div>
+          ) : (
+            ""
           )}
-
-          {showSignup && (
+          {showSignup ? (
             <div className="form signupform">
               <form>
                 <h3>Sign Up</h3>
@@ -196,6 +216,8 @@ const LoginSignup = () => {
                 </button>
               </form>
             </div>
+          ) : (
+            ""
           )}
         </div>
       </div>

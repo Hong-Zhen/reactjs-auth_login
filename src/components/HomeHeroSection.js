@@ -15,7 +15,7 @@ const HeroSection = () => {
       <p>The Ultimate University Life Hacks</p>
       <div className="hero-btns">
         <Link
-          to="/login-signup"
+          to={{ pathname: "/login-signup", state: { fromLogin: false } }}
           style={{ textDecoration: "none" }}
           title="Sign Up"
         >
@@ -27,7 +27,7 @@ const HeroSection = () => {
           </button>
         </Link>
         <Link
-          to="/login-signup"
+          to={{ pathname: "/login-signup", state: { fromLogin: true } }}
           style={{ textDecoration: "none" }}
           title="Login"
         >
